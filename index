@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animaciones de Máster Aline</title>
+  <style>
+    /* Estilos generales para centrar el contenido en la pantalla como en un escenario */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+      font-family: sans-serif;
+      gap: 60px; /* Espacio entre la espiral y la barra */
+      margin: 0;
+    }
+
+    /* --- 1. La Espiral que Gira --- */
+    .espiral {
+      font-size: 80px;
+      display: inline-block;
+      animation: girar 3s linear infinite;
+    }
+
+    @keyframes girar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* --- 2. Barras Diagonales Negras y Rojas --- */
+    .barra-animada {
+      width: 300px;
+      height: 40px;
+      border-radius: 8px; /* Bordes un poco redondeados */
+      border: 2px solid #1a1a1a; /* Un borde oscuro para enmarcar el diseño */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      
+      /* Aquí cambiamos los colores: Negro y Rojo brillante */
+      background: repeating-linear-gradient(
+        -45deg,
+        #000000 0px,
+        #000000 20px,
+        #E60000 20px,
+        #E60000 40px
+      );
+      
+      /* Mantenemos el tamaño exacto para que el bucle sea perfecto */
+      background-size: 56.5px 56.5px;
+      animation: fluir 1.5s linear infinite;
+    }
+
+    @keyframes fluir {
+      0% { background-position: 0 0; }
+      100% { background-position: 56.5px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="espiral">🌀</div>
+
+  <div class="barra-animada"></div>
+
+</body>
+</html>
